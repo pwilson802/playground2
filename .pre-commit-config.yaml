@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: check-git-secrets
+        name: Ensure git-secrets is installed
+        entry: bash -c "command -v git-secrets >/dev/null 2>&1 || { echo '❌ git-secrets is not installed! Install it first.' >&2; exit 1; }"
+        language: system
+        always_run: true
+
